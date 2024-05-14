@@ -389,7 +389,20 @@ body {
     display: flex;
     overflow-x: auto;
     align-items: center;
+    width: 20vi;
 }
+/* Estilos para la barra de desplazamiento */
+.information__buttom::-webkit-scrollbar {
+    width: 8px; /* Ancho de la barra de desplazamiento */
+    background-color: transparent; /* Fondo transparente para la barra de desplazamiento */
+}
+
+/* Estilos para la barra de desplazamiento al hacer hover */
+.information__buttom::-webkit-scrollbar-thumb:hover {
+    background-color: gray; /* Color de fondo al hacer hover */
+}
+
+
 
 .buttom__paginacion {
     display: inline-block;
@@ -479,4 +492,45 @@ margin: 0.5em;
 .btnPaginacion:hover{
     background-color: var(--color--one--rgba);
     scale: 1.1;
+}
+
+
+/* Estilos para las barras de progreso */
+.progress {
+    margin-bottom: 1vi;
+}
+
+.progress-bar {
+    height: 1vi;
+    border: 1px gray;
+    border-style: solid;
+    background-color: var(--color--one); /* Color de fondo de la barra de progreso */
+    width: 0; /* Se ajustará dinámicamente mediante JavaScript */
+    transition: width 0.5s ease-in-out; /* Transición suave al cambiar el ancho */
+}
+
+.progress span {
+    display: block;
+    margin-top: 1vi;
+    font-size: 1vi;
+    color: #333; /* Color del texto */
+}
+
+
+/* Estilos para el nombre y valor en la barra de progreso */
+.progress-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.3vi;
+    font-size: 1vi;
+    margin-right: 1vi;
+    color: #333; /* Color del texto */
+}
+
+
+.imagenes-cohetes{
+border-radius: 1vi;
+margin: 1vi;
+border: 3px rgb(157, 157, 157);
+border-style: solid;
 }
