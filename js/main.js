@@ -244,4 +244,3 @@ function capsule(){
 
     getDataCapsules();
 }
-capsule();
