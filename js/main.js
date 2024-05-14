@@ -1,12 +1,12 @@
 let rocketsData; // Almacenar los datos de los cohetes
-let currentRocketIndex = 3; // Índice del cohete actual
+let currentRocketIndex = 0; // Índice del cohete actual
 function getDataRockets(){
     const apiUrl = 'https://api.spacexdata.com/v4/rockets';
     fetch(apiUrl)
         .then(response => response.json())
         .then(data => {
             rocketsData = data;
-            displayCurrentRocketInfo(); // Mostrar la información del primer cohete al inicio
+            displayCurrentRocketInfo(); // Mostrar la información del primer cohete al inicio            
         })
         .catch(error => {
             console.error('Error al obtener la información de los cohetes:', error);
@@ -38,6 +38,7 @@ function displayCurrentRocketInfo(){
         const img = document.createElement('img');
         img.src = imageUrl;
         img.alt = 'Rocket Image';
+        img.referrerPolicy = 'no-referrer';
         img.style.width = '200px'; // Estilo opcional para el tamaño de la imagen
         imagesDiv.appendChild(img);
     });
@@ -116,8 +117,25 @@ function displayCurrentRocketInfo(){
         <p>Empuje a Peso: ${rocket.engines.thrust_to_weight}</p>
     `;
 
+    //creacion de botones para paginacion
+    const pag = document.getElementById('paginacion');
+    pag.innerHTML = '';
+    for (let i = 0; i < rocketsData.length; i++) {
+          const btn = document.createElement('button');
+          btn.textContent = i+1;
+          btn.className = 'btnPaginacion';
+          pag.appendChild(btn);
+    }
+    const btnChange = document.querySelectorAll('.btnPaginacion');
+    btnChange.forEach((e)=>{
+        e.addEventListener('click',()=>{
+            let pagina = parseInt(e.textContent);
+            currentRocketIndex = pagina-1;
+            getDataRockets();
+        });
+    });  
 }
 
 
-
 getDataRockets();
+
