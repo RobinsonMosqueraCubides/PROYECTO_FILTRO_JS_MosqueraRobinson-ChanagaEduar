@@ -41,6 +41,15 @@ document.addEventListener("DOMContentLoaded", function() {
                 <p>Masa: ${rocket.mass.kg} kg (${rocket.mass.lb} lb)</p>
             `;
 
+            // Mostrar pesos de carga
+            const payloadWeightsUl = document.getElementById('payloadWeights');
+            payloadWeightsUl.innerHTML = '';
+            rocket.payload_weights.forEach(weight => {
+                const li = document.createElement('li');
+                li.textContent = `${weight.name}: ${weight.kg} kg (${weight.lb} lb)`;
+                payloadWeightsUl.appendChild(li);
+            });
+
             // Mostrar primera etapa
             const firstStageDiv = document.getElementById('firstStage');
             firstStageDiv.innerHTML = `
@@ -79,14 +88,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 <p>Empuje a Peso: ${rocket.engines.thrust_to_weight}</p>
             `;
 
-            // Mostrar pesos de carga
-            const payloadWeightsUl = document.getElementById('payloadWeights');
-            payloadWeightsUl.innerHTML = '';
-            rocket.payload_weights.forEach(weight => {
-                const li = document.createElement('li');
-                li.textContent = `${weight.name}: ${weight.kg} kg (${weight.lb} lb)`;
-                payloadWeightsUl.appendChild(li);
-            });
+            
 
             // Mostrar imágenes
             const imagesDiv = document.getElementById('rocketImages');

@@ -5,10 +5,11 @@
     margin: 0;
     box-sizing: border-box;
     font-family: "Roboto-Regular";
+    color: white;
 }
 
 body {
-    background: linear-gradient(var(--color--one), var(--color--one--rgba));
+    background-image: url(../storage/image/Container.png);
 }
 
 *::-webkit-scrollbar {
