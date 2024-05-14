@@ -470,7 +470,12 @@ progress[value]::-moz-progress-bar {
 }
 
 .btnPaginacion{
-background-color: #1d1f38;
-width: 2vi;
-margin: 0.5vi;
+background-color: var(--color--one);
+border: none;
+padding: 1em;
+margin: 0.5em;
+}
+.btnPaginacion:hover{
+    background-color: var(--color--one--rgba);
+    scale: 1.1;
 }
