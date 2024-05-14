@@ -374,6 +374,7 @@ body {
 .nav__information {
     /* background: red; */
     grid-area: nav__2;
+    overflow-x: auto;
 }
 
 .information__item {
@@ -384,10 +385,10 @@ body {
 
 .information__buttom {
     /* background: #00ff84; */
+    grid-area: colum__2;
     display: flex;
-    justify-content: center;
+    overflow-x: auto;
     align-items: center;
-    height: 110px;
 }
 
 .buttom__paginacion {

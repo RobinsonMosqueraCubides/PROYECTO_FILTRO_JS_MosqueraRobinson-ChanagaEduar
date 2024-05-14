@@ -1,3 +1,4 @@
+function roc(){
 let rocketsData; // Almacenar los datos de los cohetes
 let currentRocketIndex = 0; // Índice del cohete actual
 function getDataRockets(){
@@ -31,17 +32,19 @@ function displayCurrentRocketInfo(){
     description.appendChild(h3);
     console.log(rocket.description);
    
-    // Mostrar imágenes
-    const imagesDiv = document.getElementById('section__image');
-    imagesDiv.innerHTML = '';
-    rocket.flickr_images.forEach(imageUrl => {
-        const img = document.createElement('img');
-        img.src = imageUrl;
-        img.alt = 'Rocket Image';
-        img.referrerPolicy = 'no-referrer';
-        img.style.width = '200px'; // Estilo opcional para el tamaño de la imagen
-        imagesDiv.appendChild(img);
-    });
+   // Mostrar imágenes
+const imagesDiv = document.getElementById('section__image');
+imagesDiv.innerHTML = '';
+rocket.flickr_images.forEach(imageUrl => {
+    const img = document.createElement('img');
+    img.src = imageUrl;
+    img.alt = 'Rocket Image';
+    img.referrerPolicy = 'no-referrer';
+    img.style.width = '20vi'; // Estilo opcional para el tamaño de la imagen
+    img.classList.add('imagenes-cohetes'); // Agregar la clase 'imagenes-cohetes'
+    imagesDiv.appendChild(img);
+});
+
 
     // Mostrar primera etapa
     const firstStageDiv = document.getElementById('information__table__1');
@@ -71,11 +74,13 @@ function displayCurrentRocketInfo(){
     dimensionsDiv.innerHTML = '';
     const tdv = document.createElement('div');
     tdv.innerHTML = `
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+   
     <h2>Dimensiones</h2>
         <p>Altura: ${rocket.height.meters} metros (${rocket.height.feet} pies)</p>
         <p>Diámetro: ${rocket.diameter.meters} metros (${rocket.diameter.feet} pies)</p>
@@ -97,6 +102,7 @@ function displayCurrentRocketInfo(){
     // Mostrar motores
     const enginesDiv = document.getElementById('information__2');
     enginesDiv.innerHTML = `
+        <br>
         <br>
         <br>
         <br>
@@ -135,7 +141,107 @@ function displayCurrentRocketInfo(){
         });
     });  
 }
-
-
 getDataRockets();
 
+}
+function capsule(){
+    const apiUrl = 'https://api.spacexdata.com/v4/capsules';
+    let capsulesData = []; // Almacenar los datos de todas las cápsulas
+    let currentCapsuleIndex = 0; // Índice de la cápsula actual
+    function getDataCapsules(){
+        fetch(apiUrl)
+        .then(response => response.json())
+        .then(data => {
+            capsulesData = data;
+            displayCurrentCapsuleInfo(); // Mostrar la información de la primera cápsula al inicio
+        })
+        .catch(error => {
+            console.error('Error al obtener la información:', error);
+        });
+        function displayCurrentCapsuleInfo(){
+            const capsule = capsulesData[currentCapsuleIndex];
+                //Mostrar titulo
+            const title = document.getElementById('header__title');
+            const h1 = document.createElement('h1');
+            h1.textContent = capsule.serial
+            title.innerHTML='';
+            title.appendChild(h1);
+            console.log(capsule.serial);
+            // Verificar si la cápsula tiene lanzamientos
+            if (capsule.launches.length > 0) {
+                // Obtener información de todos los lanzamientos de la cápsula
+                let launcher = document.getElementById('description__item');
+                launcher.innerHTML='';
+                let logo = document.getElementById('section__image');
+                logo.innerHTML ='';
+                capsule.launches.forEach(launchId => {
+                    const launchUrl = `https://api.spacexdata.com/v4/launches/${launchId}`;
+
+                    fetch(launchUrl)
+                        .then(response => response.json())
+                        .then(data => {
+                            const launchName = data.name;
+                            const launchImageSmall = data.links.patch.small;
+                            const staticFireDateUtc = data.static_fire_date_utc;
+                            const launchinfo = data.details;
+                            const staticFireDateUtc2 = staticFireDateUtc ? staticFireDateUtc.slice(0,10) : 'Desconocida';
+                            let tdv = document.createElement('div');
+                            tdv.innerHTML =`
+                            <h2>Lanzamiento: ${launchName}</h2>
+                            <p>Fecha de prueba estática: ${staticFireDateUtc2}</p>
+                            <p>Detalle: ${launchinfo}</p><br>`;
+                            launcher.appendChild(tdv);
+                            let tdv2 = document.createElement('div');
+                            tdv2.innerHTML = `<img src="${launchImageSmall}" alt="${launchName} Imagen" width="280vi" />`;
+                            logo.appendChild(tdv2);
+                            console.log(data.flickr);
+                            
+                        
+                        })
+                        .catch(error => {
+                            console.error('Error al obtener la información del lanzamiento:', error);
+                        });
+                });
+            } else {
+                // Si la cápsula no tiene lanzamientos, mostrar un mensaje en lugar de la información del lanzamiento
+                let logo = document.getElementById('section__information__1');
+                logo.innerHTML = '<h2>Esta cápsula no tiene lanzamientos.</h2>';
+            }
+            let capsuleInformation = document.getElementById('information__2');
+            capsuleInformation.innerHTML = `
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <p><strong>Reutilización:</strong> ${capsule.reuse_count}</p>
+            <p><strong>Aterrizajes en agua:</strong> ${capsule.water_landings}</p>
+            <p><strong>Aterrizajes en tierra:</strong> ${capsule.land_landings}</p>
+            <p><strong>Última actualización:</strong> ${capsule.last_update}</p>
+            <p><strong>Estado:</strong> ${capsule.status}</p>
+            <p><strong>Tipo:</strong> ${capsule.type}</p>
+        `;
+             //creacion de botones para paginacion
+     const pag = document.getElementById('paginacion');
+     pag.innerHTML = '';
+     for (let i = 0; i < capsulesData.length; i++) {
+           const btn = document.createElement('button');
+           btn.textContent = i+1;
+           btn.className = 'btnPaginacion';
+           pag.appendChild(btn);
+     }
+     const btnChange = document.querySelectorAll('.btnPaginacion');
+     btnChange.forEach((e)=>{
+         e.addEventListener('click',()=>{
+             let pagina = parseInt(e.textContent);
+             currentCapsuleIndex = pagina-1;
+             getDataCapsules();
+         });
+     });
+        }  
+    }
+
+    getDataCapsules();
+}
+capsule();
