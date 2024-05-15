@@ -1,5 +1,7 @@
 import './capsules.js';
 import './rockets.js';
+import  './histories.js'
+import './company.js'
 function reconocer(x){
     let elemento = document.querySelectorAll(x);
     elemento.forEach((e)=>{
@@ -13,3 +15,5 @@ function reconocer(x){
 }
 reconocer('#rockets');
 reconocer('#capsules');
+reconocer('#history');
+reconocer('#company');

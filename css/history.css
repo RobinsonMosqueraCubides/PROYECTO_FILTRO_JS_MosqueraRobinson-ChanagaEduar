@@ -1,0 +1,77 @@
+@import url(variable.css);
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Roboto-Regular";
+    color: white;
+}
+
+body {
+    background-image: url(../storage/image/Container.png);
+}
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 8vh;
+}
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 82vh;
+}
+.container #container-2{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 20%;
+    height: 100%;
+}
+.container #contexto{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 60%;
+    height: 100%;
+    font-size: 1vi;
+}
+.container #container-1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 20%;
+    height: 100%;
+}
+#botton__history{
+    background-color: var(--color--seven);
+    border: none;
+    cursor: pointer;
+    padding: 10px 40px;
+    width: 15vi;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 0.8vi;
+}
+#botton__history:hover{
+    scale: 1.1;
+    background-color: var(--color--one--rgba);
+}
+#logo img{
+    width: 40vi;
+}
+
+#historiaFecha{
+    padding: 1vi;
+    font-size: 1vi;
+    background-color: var(--color--one--rgba);
+    margin: 1vi;
+    border-radius: 1vi;
+    border: 1px solid white;
+}
