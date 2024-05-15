@@ -35,7 +35,7 @@ body {
 .header__title {
     /* background: red; */
     color: var(--color--five);
-    height: 10vh;
+    height: 8vh;
     font-size: 2.3rem;
     display: flex;
     justify-content: center;
@@ -59,7 +59,7 @@ body {
 }
 .main {
     /* background: orange; */
-    height: 90vh;
+    height: 82vh;
     display: grid;
     grid-template-columns: 1.5fr 6fr 2fr;
     grid-template-areas: "nav__1 main nav__2";
@@ -74,7 +74,11 @@ body {
     /* background: blue; */
     overflow-y: auto;
     height: 75vh;
-    margin-left: 1vi;
+    margin: 0 1vi;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .description__buttom {
@@ -266,10 +270,9 @@ body {
 .section__information__3 div:first-child {
     /* background: #d9ff00; */
     grid-area: carusel__colum__2;
-    display: flex;
     overflow-x: auto;
     gap: 10px;
-    justify-content: space-evenly;
+
 }
 
 .section__information__3 div:first-child>.carousel__item {
@@ -381,8 +384,13 @@ body {
 
 .information__item {
     /* background: violet; */
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
     overflow-y: auto;
     height: 75vh;
+    margin: 0 1vi;
+    text-align: justify;
 }
 
 .information__buttom {
