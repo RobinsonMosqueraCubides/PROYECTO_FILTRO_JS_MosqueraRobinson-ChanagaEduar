@@ -1,4 +1,96 @@
 function roc(){
+    // Mostrar primera etapa
+    const firstStageDiv = document.getElementById('todo');
+    firstStageDiv.innerHTML = `
+    <header class="header">
+    <div id="header__title" class="header__title">
+        <div class="load"></div>
+    </div>
+</header>
+<main class="main">
+    <nav class="nav__description">
+        <div id="description__item" class="description__item">
+            <div class="load"></div>
+            <div class="load"></div>
+            <div class="load"></div>
+            <div class="load"></div>
+            <div class="load"></div>
+        </div>
+        <div class="description__buttom">
+        </div>
+    </nav>
+    <section class="main__section">
+        <article id="section__information__1" class="section__information__1">
+            <div class="load" style="height: 150px;"></div>
+        </article>
+        <article class="section__information__container">
+            <div id="section__information__2" class="section__information__2">
+                <div>
+                    <div class="load" style="height: 150px;"></div>
+                </div>
+                <div id="information__table__1" class="information__table__1">
+                    <div class="load" style="height: 160px;"></div>
+                </div>
+            </div>
+
+                <!--Imagenes-->
+            <div id="section__image" class="section__image">
+                <div class="load" style="height: 350px"></div>
+            </div>
+
+
+            <div class="section__information__3">
+                <div id="yes">
+                    <div class="load" style="height: 150px;"></div>
+                </div>
+                <div id="information__table__2" class="information__table__2">
+                    <div class="load" style="height: 160px;"></div>
+                </div>
+            </div>
+        </article>
+        <footer class="footer">
+            <ul>
+                <li id="rockets" onclick="roc()">
+                    <a class="select" href="#">
+                        <i class='bx bx-rocket'></i>
+                        <span>Rockets</span>
+                    </a>
+                </li>
+                <li id="capsules" onclick="capsule()">
+                    <a href="#">
+                        <i class='bx bx-capsule'></i>
+                        <span>Capsules</span>
+                    </a>
+                </li>
+                <li id="history" onclick="historty()">
+                    <a  href="#" >
+                        <i class='bx bx-book-open' ></i>
+                        <span>History</span>
+                    </a>
+                </li>
+                <li id="company" onclick="company()">
+                    <a href="#" >
+                        <i class='bx bxs-rocket' ></i>
+                        <span>Company</span>
+                    </a>
+                </li>
+            </ul>
+        </footer>
+    </section>
+    <nav class="nav__information">
+        <div id="information__2" class="information__item">
+            <div class="load"></div>
+            <div class="load"></div>
+            <div class="load"></div>
+            <div class="load"></div>
+            <div class="load"></div>
+        </div>
+        <div id="paginacion" class="information__buttom">
+            <div class="load"></div>
+        </div>
+    </nav>
+</main>   
+    `;
 let rocketsData; // Almacenar los datos de los cohetes
 let currentRocketIndex = 0; // Índice del cohete actual
 function getDataRockets(){
@@ -307,6 +399,98 @@ getDataRockets();
 
 }
 function capsule(){
+    const firstStageDiv = document.getElementById('todo');
+    firstStageDiv.innerHTML = `
+    <header class="header">
+    <div id="header__title" class="header__title">
+        <div class="load"></div>
+    </div>
+</header>
+<main class="main">
+    <nav class="nav__description">
+        <div id="description__item" class="description__item">
+            <div class="load"></div>
+            <div class="load"></div>
+            <div class="load"></div>
+            <div class="load"></div>
+            <div class="load"></div>
+        </div>
+        <div class="description__buttom">
+        </div>
+    </nav>
+    <section class="main__section">
+        <article id="section__information__1" class="section__information__1">
+            <div class="load" style="height: 150px;"></div>
+        </article>
+        <article class="section__information__container">
+            <div id="section__information__2" class="section__information__2">
+                <div>
+                    <div class="load" style="height: 150px;"></div>
+                </div>
+                <div id="information__table__1" class="information__table__1">
+                    <div class="load" style="height: 160px;"></div>
+                </div>
+            </div>
+
+                <!--Imagenes-->
+            <div id="section__image" class="section__image">
+                <div class="load" style="height: 350px"></div>
+            </div>
+
+
+            <div class="section__information__3">
+                <div id="yes">
+                    <div class="load" style="height: 150px;"></div>
+                </div>
+                <div id="information__table__2" class="information__table__2">
+                    <div class="load" style="height: 160px;"></div>
+                </div>
+            </div>
+        </article>
+        <footer class="footer">
+            <ul>
+                <li id="rockets" onclick="roc()">
+                    <a  href="#">
+                        <i class='bx bx-rocket'></i>
+                        <span>Rockets</span>
+                    </a>
+                </li>
+                <li id="capsules" onclick="capsule()">
+                    <a class="select" href="#">
+                        <i class='bx bx-capsule'></i>
+                        <span>Capsules</span>
+                    </a>
+                </li>
+                <li id="history" onclick="historty()">
+                    <a  href="#" >
+                        <i class='bx bx-book-open' ></i>
+                        <span>History</span>
+                    </a>
+                </li>
+                <li id="company" onclick="company()">
+                    <a href="#" >
+                        <i class='bx bxs-rocket' ></i>
+                        <span>Company</span>
+                    </a>
+                </li>
+            </ul>
+        </footer>
+    </section>
+    <nav class="nav__information">
+        <div id="information__2" class="information__item">
+            <div class="load"></div>
+            <div class="load"></div>
+            <div class="load"></div>
+            <div class="load"></div>
+            <div class="load"></div>
+        </div>
+        <div id="paginacion" class="information__buttom">
+            <div class="load"></div>
+        </div>
+    </nav>
+</main>   
+    `;
+    
     const apiUrl = 'https://api.spacexdata.com/v4/capsules';
     let capsulesData = []; // Almacenar los datos de todas las cápsulas
     let currentCapsuleIndex = 0; // Índice de la cápsula actual
@@ -320,25 +504,45 @@ function capsule(){
         .catch(error => {
             console.error('Error al obtener la información:', error);
         });
-        function displayCurrentCapsuleInfo(){
+        function displayCurrentCapsuleInfo() {
+            // Limpiar los div con los IDs especificados
+            const divsToClear = [
+                'section__information__1',
+                'description__item',
+                'information__2',
+                'section__information__2',
+                'section__information__3',
+                'section__image',
+                'yes',
+                'information__table__2'
+            ];
+        
+            divsToClear.forEach(id => {
+                const div = document.getElementById(id);
+                if (div) {
+                    div.innerHTML = ''; // Limpiar el contenido del div
+                } else {
+                    console.error(`No se encontró el div con el ID: ${id}`);
+                }
+            });
+        
+            // Resto del código para mostrar la información de la cápsula
             const capsule = capsulesData[currentCapsuleIndex];
-                //Mostrar titulo
             const title = document.getElementById('header__title');
             const h1 = document.createElement('h1');
-            h1.textContent = capsule.serial
-            title.innerHTML='';
+            h1.textContent = capsule.serial;
+            title.innerHTML = '';
             title.appendChild(h1);
             console.log(capsule.serial);
+        
             // Verificar si la cápsula tiene lanzamientos
             if (capsule.launches.length > 0) {
                 // Obtener información de todos los lanzamientos de la cápsula
                 let launcher = document.getElementById('description__item');
-                launcher.innerHTML='';
                 let logo = document.getElementById('section__image');
-                logo.innerHTML ='';
                 capsule.launches.forEach(launchId => {
                     const launchUrl = `https://api.spacexdata.com/v4/launches/${launchId}`;
-
+        
                     fetch(launchUrl)
                         .then(response => response.json())
                         .then(data => {
@@ -346,19 +550,17 @@ function capsule(){
                             const launchImageSmall = data.links.patch.small;
                             const staticFireDateUtc = data.static_fire_date_utc;
                             const launchinfo = data.details;
-                            const staticFireDateUtc2 = staticFireDateUtc ? staticFireDateUtc.slice(0,10) : 'Desconocida';
+                            const staticFireDateUtc2 = staticFireDateUtc ? staticFireDateUtc.slice(0, 10) : 'Desconocida';
                             let tdv = document.createElement('div');
-                            tdv.innerHTML =`
-                            <h2>Lanzamiento: ${launchName}</h2>
-                            <p>Fecha de prueba estática: ${staticFireDateUtc2}</p>
-                            <p>Detalle: ${launchinfo}</p><br>`;
+                            tdv.innerHTML = `
+                                <h2>Lanzamiento: ${launchName}</h2>
+                                <p>Fecha de prueba estática: ${staticFireDateUtc2}</p>
+                                <p>Detalle: ${launchinfo}</p><br>`;
                             launcher.appendChild(tdv);
                             let tdv2 = document.createElement('div');
                             tdv2.innerHTML = `<img src="${launchImageSmall}" alt="${launchName} Imagen" width="280vi" />`;
                             logo.appendChild(tdv2);
                             console.log(data.flickr);
-                            
-                        
                         })
                         .catch(error => {
                             console.error('Error al obtener la información del lanzamiento:', error);
@@ -369,41 +571,64 @@ function capsule(){
                 let logo = document.getElementById('section__information__1');
                 logo.innerHTML = '<h2>Esta cápsula no tiene lanzamientos.</h2>';
             }
-            
+        
             let capsuleInformation = document.getElementById('information__2');
             capsuleInformation.innerHTML = `
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <p><strong>Reutilización:</strong> ${capsule.reuse_count}</p>
-            <p><strong>Aterrizajes en agua:</strong> ${capsule.water_landings}</p>
-            <p><strong>Aterrizajes en tierra:</strong> ${capsule.land_landings}</p>
-            <p><strong>Última actualización:</strong> ${capsule.last_update}</p>
-            <p><strong>Estado:</strong> ${capsule.status}</p>
-            <p><strong>Tipo:</strong> ${capsule.type}</p>
-        `;
-             //creacion de botones para paginacion
-     const pag = document.getElementById('paginacion');
-     pag.innerHTML = '';
-     for (let i = 0; i < capsulesData.length; i++) {
-           const btn = document.createElement('button');
-           btn.textContent = i+1;
-           btn.className = 'btnPaginacion';
-           pag.appendChild(btn);
-     }
-     const btnChange = document.querySelectorAll('.btnPaginacion');
-     btnChange.forEach((e)=>{
-         e.addEventListener('click',()=>{
-             let pagina = parseInt(e.textContent);
-             currentCapsuleIndex = pagina-1;
-             getDataCapsules();
-         });
-     });
-        }  
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <p><strong>Reutilización:</strong> ${capsule.reuse_count}</p>
+                <p><strong>Aterrizajes en agua:</strong> ${capsule.water_landings}</p>
+                <p><strong>Aterrizajes en tierra:</strong> ${capsule.land_landings}</p>
+                <p><strong>Última actualización:</strong> ${capsule.last_update}</p>
+                <p><strong>Estado:</strong> ${capsule.status}</p>
+                <p><strong>Tipo:</strong> ${capsule.type}</p>
+            `;
+        
+            // Creación de botones para paginación
+            const pag = document.getElementById('paginacion');
+            pag.innerHTML = '';
+            for (let i = 0; i < capsulesData.length; i++) {
+                const btn = document.createElement('button');
+                btn.textContent = i + 1;
+                btn.className = 'btnPaginacion';
+                pag.appendChild(btn);
+            }
+            const btnChange = document.querySelectorAll('.btnPaginacion');
+            btnChange.forEach((e) => {
+                e.addEventListener('click', () => {
+                    let pagina = parseInt(e.textContent);
+                    currentCapsuleIndex = pagina - 1;
+                    getDataCapsules();
+                });
+            });
+        } 
     }
 
     getDataCapsules();
 }
+
+
+// Obtener la lista de elementos <li> del menú
+const menuItems = document.querySelectorAll('.footer ul li');
+
+// Agregar un evento 'click' a cada elemento de menú
+menuItems.forEach(item => {
+    item.addEventListener('click', () => {
+        // Remover la clase 'select' de todos los elementos <a> dentro de <li>
+        menuItems.forEach(item => {
+            const link = item.querySelector('a');
+            link.classList.remove('select');
+        });
+
+        // Agregar la clase 'select' solo al elemento <a> del elemento <li> actual
+        const currentLink = item.querySelector('a');
+        currentLink.classList.add('select');
+    });
+});
+
+
+roc()

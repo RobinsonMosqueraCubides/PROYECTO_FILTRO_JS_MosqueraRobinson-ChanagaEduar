@@ -50,6 +50,7 @@ body {
     width: 100%;
     margin: 12px 0;
     height: 100px;
+    border-radius: 2vi;
 }
 @keyframes load{
     100%{
@@ -73,6 +74,7 @@ body {
     /* background: blue; */
     overflow-y: auto;
     height: 75vh;
+    margin-left: 1vi;
 }
 
 .description__buttom {
